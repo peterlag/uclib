@@ -1,0 +1,43 @@
+//INTEGRANTES:
+//pedro luis agudelo
+//jorge eliecer arcila
+//william hernandez
+
+
+#include <avr/io.h>
+#include <util/delay.h>
+
+void inicializar(){
+ PORTA=0X00;
+_delay_ms(10);
+PORTB=0X3F;
+PORTA=0X01;
+_delay_ms(10);
+
+PORTA=0x00;
+_delay_ms(10);
+PORTB=0x06;//modo de escritura
+PORTA=0x01;
+_delay_ms(10);
+
+PORTA=0X00;
+_delay_ms(10);
+PORTB=0X0F;//mostrar en pantalla el cursor
+_delay_ms(10);
+PORTA=0X01;
+_delay_ms(10);
+PORTA=0X00;	
+}
+
+
+void LCDGotoXY(uint8_t x, uint8_t y)	//mover el cursor sobre las filas y columnas	
+{
+	register uint8_t DDRAMAddr;
+	switch(y)
+	{
+	case 0: DDRAMAddr = LCD_LINE0_DDRAMADDR+x; break;
+	case 1: DDRAMAddr = LCD_LINE1_DDRAMADDR+x; break;
+	case 2: DDRAMAddr = LCD_LINE2_DDRAMADDR+x; break;
+	case 3: DDRAMAddr = LCD_LINE3_DDRAMADDR+x; break;
+	default: DDRAMAddr = LCD_LINE0_DDRAMADDR+x;
+	}
