@@ -5,38 +5,6 @@ Polymer({
             type: String,
             value: ''
             },
-        src144:{
-            type: String,
-            value: 'undefined'
-        },
-        src180:{
-            type: String,
-            value: 'undefined'
-        },
-        src216:{
-            type: String,
-            value: 'undefined'            
-        },
-        src288:{
-            type: String,
-            value: 'undefined'
-        },
-        src360:{
-             type: String,
-            value: 'undefined'           
-        },
-        src480:{
-            type: String,
-            value: 'undefined'  
-        },
-        src720:{
-            type: String,
-            value: 'undefined'            
-        },
-        src1080:{
-            type: String,
-            value: 'undefined'            
-        },
         tr:{
             type: String,
             value: 'none'
@@ -103,15 +71,7 @@ Polymer({
     is: 'video-player',
     
     ready: function () {
-        var src = this.src;
-        var src144 = this.src144;
-        var src180 = this.src180;
-        var src216 = this.src216;
-        var src288 = this.src288;
-        var src360 = this.src360;
-        var src480 = this.src480;
-        var src720 = this.src720;
-        var src1080 = this.src1080;
+
         var temacolorv = this.temacolor;
         document.getElementById("video-controls").setAttribute("class", temacolorv);
         var videosize = this.videosize + "px";
@@ -155,125 +115,11 @@ Polymer({
                 var tiempo = document.getElementById('tiempo');
                 var botonv = document.getElementById("bsp-volume");
                 var handleb = document.getElementById("handleid");
-                var calidad = document.getElementById("calidad");
-                var info = document.getElementById("informacion");
-                
-                    if(src144 != 'undefined'){
-                        var listacalidad = document.createElement("div");
-                        var aa1 = "listacalidad";
-                        var aa3 = aa1.concat("144");
-                        listacalidad.setAttribute("id",aa3);
-                        listacalidad.setAttribute("class", "listacalidad");
-                        listacalidad.innerHTML +=  "<font color='white'>144p</font>";
-                        listacalidad.addEventListener('click', cambiarcalidad.bind(null, src144));                           document.getElementById('menucalidad').appendChild(listacalidad); 
-                    }
-                    if(src180 != 'undefined'){
-                        var listacalidad = document.createElement("div");
-                        var aa1 = "listacalidad";
-                        var aa3 = aa1.concat("180");
-                        listacalidad.setAttribute("id",aa3);
-                        listacalidad.setAttribute("class", "listacalidad");
-                        listacalidad.innerHTML +=  "<font color='white'>180p</font>";
-                        listacalidad.addEventListener('click', cambiarcalidad.bind(null, src180));                           document.getElementById('menucalidad').appendChild(listacalidad); 
-                    }
-                    if(src216 != 'undefined'){
-                        var listacalidad = document.createElement("div");
-                        var aa1 = "listacalidad";
-                        var aa3 = aa1.concat("216");
-                        listacalidad.setAttribute("id",aa3);
-                        listacalidad.setAttribute("class", "listacalidad");
-                        listacalidad.innerHTML +=  "<font color='white'>216p</font>";
-                        listacalidad.addEventListener('click', cambiarcalidad.bind(null, src216));                           document.getElementById('menucalidad').appendChild(listacalidad); 
-                    }
-                    if(src288 != 'undefined'){
-                        var listacalidad = document.createElement("div");
-                        var aa1 = "listacalidad";
-                        var aa3 = aa1.concat("288");
-                        listacalidad.setAttribute("id",aa3);
-                        listacalidad.setAttribute("class", "listacalidad");
-                        listacalidad.innerHTML +=  "<font color='white'>288p</font>";
-                        listacalidad.addEventListener('click', cambiarcalidad.bind(null, src288));                           document.getElementById('menucalidad').appendChild(listacalidad); 
-                    }
-                    if(src360 != 'undefined'){
-                        var listacalidad = document.createElement("div");
-                        var aa1 = "listacalidad";
-                        var aa3 = aa1.concat("360");
-                        listacalidad.setAttribute("id",aa3);
-                        listacalidad.setAttribute("class", "listacalidad");
-                        listacalidad.innerHTML +=  "<font color='white'>360p</font>";
-                        listacalidad.addEventListener('click', cambiarcalidad.bind(null, src360));                           document.getElementById('menucalidad').appendChild(listacalidad); 
-                    }
-                    if(src480 != 'undefined'){
-                        var listacalidad = document.createElement("div");
-                        var aa1 = "listacalidad";
-                        var aa3 = aa1.concat("480");
-                        listacalidad.setAttribute("id",aa3);
-                        listacalidad.setAttribute("class", "listacalidad");
-                        listacalidad.innerHTML +=  "<font color='white'>480p</font>";
-                        listacalidad.addEventListener('click', cambiarcalidad.bind(null, src480));                           document.getElementById('menucalidad').appendChild(listacalidad); 
-                    }
-                    if(src720 != 'undefined'){
-                        var listacalidad = document.createElement("div");
-                        var aa1 = "listacalidad";
-                        var aa3 = aa1.concat("720");
-                        listacalidad.setAttribute("id",aa3);
-                        listacalidad.setAttribute("class", "listacalidad");
-                        listacalidad.innerHTML +=  "<font color='white'>720p</font>";
-                        listacalidad.addEventListener('click', cambiarcalidad.bind(null, src720));                           document.getElementById('menucalidad').appendChild(listacalidad); 
-                    }
-                    if(src1080 != 'undefined'){
-                        var listacalidad = document.createElement("div");
-                        var aa1 = "listacalidad";
-                        var aa3 = aa1.concat("1080");
-                        listacalidad.setAttribute("id",aa3);
-                        listacalidad.setAttribute("class", "listacalidad");
-                        listacalidad.innerHTML +=  "<font color='white'>1080p</font>";
-                        listacalidad.addEventListener('click', cambiarcalidad.bind(null, src1080));                           document.getElementById('menucalidad').appendChild(listacalidad); 
-                    }
-                    if(src != 'undefined'){
-                        var listacalidad = document.createElement("div");
-                        var aa1 = "listacalidad";
-                        var aa3 = aa1.concat("dafault");
-                        listacalidad.setAttribute("id",aa3);
-                        listacalidad.setAttribute("class", "listacalidad");
-                        listacalidad.innerHTML +=  "<font color='white'>default</font>";
-                        listacalidad.addEventListener('click', cambiarcalidad.bind(null, src));                           document.getElementById('menucalidad').appendChild(listacalidad); 
-                    }
-                    else{
-                        video.src = src;
-                    }
-
-                 document.getElementById("infoboton").innerHTML +=  "<font color='white'>  URL VIDEO: "+ video.src +"<br/>"+ video.height+" <br/></font>";                           
                 
                 fullscreen.style.marginLeft = String(parseInt((videosize2)*16/9) - 30) + "px";
-                transcriptb.style.marginLeft = String(parseInt((videosize2)*16/9) - 110) + "px";
-                subtitles.style.marginLeft = String(parseInt((videosize2)*16/9) - 80) + "px";
-                tiempo.style.marginLeft = String(parseInt((videosize2)*16/9) -180) + "px";
-                info.style.marginLeft = String(parseInt((videosize2)*16/9) - 175) + "px";
-                calidad.style.marginLeft = String(parseInt((videosize2)*16/9) - 400) + "px";
-                
-                function cambiarcalidad(qq){
-                    video.src = qq;
-                    if(temacolorv == "blanco" || temacolorv == "gris"){
-                        playpause.setAttribute('data-state', 'playn');
-                    }
-                    else{
-                       playpause.setAttribute('data-state', 'play'); 
-                    }
-                    
-                }
-                
-                calidad.addEventListener("click", function(){
-                    if(calidad){  
-                        menucalidad.style.display = (menucalidad.style.display == 'none' ? 'block' : 'none');
-                    }
-                });
-                
-                info.addEventListener("click", function(){
-                    if(info){   
-                        infoboton.style.display = (infoboton.style.display == 'none' ? 'block' : 'none');
-                    }
-                });
+                transcriptb.style.marginLeft = String(parseInt((videosize2)*16/9) - 90) + "px";
+                subtitles.style.marginLeft = String(parseInt((videosize2)*16/9) - 60) + "px";
+                tiempo.style.marginLeft = String(parseInt((videosize2)*16/9) - 140) + "px";
                 
                 if(temacolorv == "blanco" || temacolorv == "gris"){
                     tiempo.style.color = 'black';
@@ -282,9 +128,7 @@ Polymer({
                     fullscreen.setAttribute('data-state', 'go-fullscreenn');
                     playpause.setAttribute('data-state', 'playn');
                     botonv.setAttribute('data-state', 'aan');
-                    calidad.setAttribute('data-state','calidadn');
                     handleb.setAttribute('class', 'bsp-volume-slider-handlen');
-                    info.setAttribute('data-state', 'infon');
                 }
                 else{
                     tiempo.style.color = 'white';
@@ -293,9 +137,7 @@ Polymer({
                     fullscreen.setAttribute('data-state', 'go-fullscreen');
                     playpause.setAttribute('data-state', 'play');
                     botonv.setAttribute('data-state', 'aa');
-                    calidad.setAttribute('data-state','calidad');
                     handleb.setAttribute('class', 'bsp-volume-slider-handle');
-                    info.setAttribute('data-state', 'info');
                 }
                 var supportsProgress = (document.createElement('progress').max !== undefined);
                 if (!supportsProgress) progress.setAttribute('data-state', 'fake');
@@ -352,24 +194,19 @@ Polymer({
                         if (type == 'playpause') {
                             if (video.paused || video.ended) {
                                 if(temacolorv == "blanco" || temacolorv == "gris"){
-                                    playpause.setAttribute('data-state', 'playn');
-                                    playpause.title = "play";
-                                    
+                                    playpause.setAttribute('data-state', 'playn');   
                                 }
                                 else{
                                     playpause.setAttribute('data-state', 'play');
-                                    playpause.title = "play";
                                 }
                                 
                             }
                             else {
                                 if(temacolorv == "blanco" || temacolorv == "gris"){
-                                    playpause.setAttribute('data-state', 'pausen');
-                                    playpause.title = "pause";
+                                    playpause.setAttribute('data-state', 'pausen');   
                                 }
                                 else{
-                                   playpause.setAttribute('data-state', 'pause'); 
-                                   playpause.title = "pause";
+                                   playpause.setAttribute('data-state', 'pause');    
                                 }
                                 
                             }
@@ -483,8 +320,8 @@ Polymer({
                         });
 
                     progress.addEventListener('click', function(e) {
+
                         var pos = (e.pageX  - (this.offsetLeft + this.offsetParent.offsetLeft + this.offsetParent.offsetParent.offsetLeft)) / this.offsetWidth;
-                        console.log(pos)
                         video.currentTime = pos * video.duration;
                     });
 
@@ -591,4 +428,5 @@ Polymer({
          })(); //use strict
          
     } //ready function
+         }); // polymer function
          }); // polymer function
